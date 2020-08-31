@@ -8,9 +8,8 @@ spec:
       port: 80
       targetPort: 80
   selector:
-    matchLabels:
-      app: mealplan
-      tier: frontend
+    app: mealplan
+    tier: frontend
   type: LoadBalancer
 ---
 apiVersion: apps/v1
@@ -20,7 +19,8 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: frontend
+      app: mealplan
+      tier: frontend
   template:
     metadata:
       labels:
